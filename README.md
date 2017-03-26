@@ -1,6 +1,6 @@
 # WeatherApp
-A simple weather app
-While opening in browser, please allow "unsafe scripts from unauthenticated sources" for the widget to work properly.
+A simple weather app for browser. 
+While opening in browser, please **allow "unsafe scripts from unauthenticated sources"** for the widget to work properly.
 This is caused due to the use of an HTTP API on an HTTPS page.
 
 To view the project on your local machine-
