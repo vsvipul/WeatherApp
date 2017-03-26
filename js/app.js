@@ -1,38 +1,13 @@
-(function($, document, window){
-	
-	$(document).ready(function(){
 
-		// Cloning main navigation for mobile menu
-		$(".mobile-navigation").append($(".main-navigation .menu").clone());
 
-		// Mobile menu toggle 
-		$(".menu-toggle").click(function(){
-			$(".mobile-navigation").slideToggle();
-		});
+$("#submit").click(function () {
+				var cityname=$('#city-name').val();	
+              	getData();
+            });	
 
-		var map = $(".map");
-		var latitude = map.data("latitude");
-		var longitude = map.data("longitude");
-		if( map.length ){
-			
-			map.gmap3({
-				map:{
-					options:{
-						center: [latitude,longitude],
-						zoom: 15,
-						scrollwheel: false
-					}
-				},
-				marker:{
-					latLng: [latitude,longitude],
-				}
-			});
-			
-		}
-	});
+function getData(){
 
-	$(window).load(function(){
+	var cityname=$('#city-name').val();
+	$('#showdata').html('<iframe src="http://api.openweathermap.org/data/2.5/weather?q='+cityname+'&mode=html&appid=4724aeb3679c3b760098a6a700b456fe">alternative content for browsers which do not support iframe.	</iframe>');
 
-	});
-
-})(jQuery, document, window);
+}
