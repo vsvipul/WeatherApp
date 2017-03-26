@@ -4,6 +4,6 @@ While opening in browser, please **allow "unsafe scripts from unauthenticated so
 This is caused due to the use of an HTTP API on an HTTPS page.
 
 To view the project on your local machine-
-1. Download the zip or clone to your system.
-2. Extract the zip and open index.html in your browser.
+1. Download and extract the zip or clone to your system.
+2. Open index.html in your browser.
 
