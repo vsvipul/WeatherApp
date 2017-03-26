@@ -51,8 +51,8 @@
 			<div class="hero" data-bg-image="images/banner.png">
 				<div class="container">
 					<form action="#" class="find-location">
-						<input type="text" placeholder="Find your location...">
-						<input type="submit" value="Find">
+						<input type="text" placeholder="Find your location..." id="city-name">
+						<input type="submit" value="Find" id="submit">
 					</form>
 
 				</div>
@@ -65,11 +65,9 @@
 								<div class="day">Monday</div>
 								<div class="date">6 Oct</div>
 							</div> <!-- .forecast-header -->
-							<div class="forecast-content">
+							<div class="forecast-content" id="showdata">
 								
-								<iframe src="http://api.openweathermap.org/data/2.5/weather?q=allahabad&mode=html&appid=4724aeb3679c3b760098a6a700b456fe">
-    							alternative content for browsers which do not support iframe.
-								</iframe>
+								
 
 							</div>
 						</div>
