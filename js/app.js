@@ -36,6 +36,7 @@ function getData2(){
 					dataType: "jsonp",
 					success: function(data){
 					res1=data.main.temp;
+
 					}
 
 				});
