@@ -16,3 +16,47 @@ var day= dayNames[date.getDay()];
 var datemonth= date.getDate()+' '+monthNames[date.getMonth()];
 $('#dayname').html(day)
 $('#datemonth').html(datemonth);
+
+$("#submit1").click(function () {
+				var cityname1=$('#city-name1').val();
+				var cityname2=$('#city-name2').val();
+				var cityname3=$('#city-name3').val();	
+              	getData2();
+            });	
+
+function getData2(){
+	var cityname1=$('#city-name1').val();
+	var cityname2=$('#city-name2').val();
+	var cityname3=$('#city-name3').val();
+	var appid='4724aeb3679c3b760098a6a700b456fe';
+	var res1,res2,res3;
+	$.ajax({
+					url: 'http://api.openweathermap.org/data/2.5/weather?q=' +cityname1+ "&units=metric" + "&APPID="+appid,
+					type: "GET",
+					dataType: "jsonp",
+					success: function(data){
+					res1=data.main.temp;
+					}
+
+				});
+	$.ajax({
+					url: 'http://api.openweathermap.org/data/2.5/weather?q=' +cityname2+ "&units=metric" + "&APPID="+appid,
+					type: "GET",
+					dataType: "jsonp",
+					success: function(data){
+					res2=data.main.temp;
+					}
+
+				});
+	$.ajax({
+					url: 'http://api.openweathermap.org/data/2.5/weather?q=' +cityname3+ "&units=metric" + "&APPID="+appid,
+					type: "GET",
+					dataType: "jsonp",
+					success: function(data){
+					res3=data.main.temp;
+					}
+
+				});
+	var res=((res1+res2+res3)/3).toFixed(2);
+	$('#showdata').html('<h1>'+res+'</h1>');
+}
