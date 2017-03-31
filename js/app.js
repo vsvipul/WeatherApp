@@ -29,7 +29,7 @@ function getData2(){
 	var cityname2=$('#city-name2').val();
 	var cityname3=$('#city-name3').val();
 	var appid='4724aeb3679c3b760098a6a700b456fe';
-	var res1,res2,res3,res;
+	var res1,res2,res3,res,p1,p2,p3,p,h1,h2,h3,h;
 	$.ajax(
 		{
 			url: 'http://api.openweathermap.org/data/2.5/weather?q=' +cityname1+ "&units=metric" + "&APPID="+appid,
@@ -38,6 +38,8 @@ function getData2(){
 			success: function(data)
 			{
 				res1=parseFloat(data.main.temp);
+				p1=parseFloat(data.main.pressure);
+				h1=parseFloat(data.main.humidity);
 				$.ajax(
 				{
 					url: 'http://api.openweathermap.org/data/2.5/weather?q=' +cityname2+ "&units=metric" + "&APPID="+appid,
@@ -46,6 +48,8 @@ function getData2(){
 					success: function(data)
 					{
 						res2=parseFloat(data.main.temp);
+						p2=parseFloat(data.main.pressure);
+						h2=parseFloat(data.main.humidity);
 						$.ajax(
 						{
 							url: 'http://api.openweathermap.org/data/2.5/weather?q=' +cityname3+ "&units=metric" + "&APPID="+appid,
@@ -54,8 +58,12 @@ function getData2(){
 							success: function(data)
 							{
 								res3=parseFloat(data.main.temp);
+								p3=parseFloat(data.main.pressure);
+								h3=parseFloat(data.main.humidity);
 								res=((res1+res2+res3)/3).toFixed(2);
-								$('#showdata').html('<h1>The average temperature is: '+res+' <sup>o</sup>C</h1>');
+								p=((p1+p2+p3)/3).toFixed(2);
+								h=((h1+h2+h3)/3).toFixed(2);
+								$('#showdata').html('<h1>Average Temperature: '+res+' <sup>o</sup>C</h1><br><h1>Average Pressure: '+p+' hPa</h1><br><h1>Average Humidity: '+h+' %</h1>');
 							}
 						});
 					}
