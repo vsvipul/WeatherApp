@@ -12,7 +12,7 @@ function getData(){
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var dayNames = ["Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday"];
 var date= new Date();
-var day= dayNames[date.getDay()];
+var day= dayNames[date.getDay()-1];
 var datemonth= date.getDate()+' '+monthNames[date.getMonth()];
 $('#dayname').html(day)
 $('#datemonth').html(datemonth);
